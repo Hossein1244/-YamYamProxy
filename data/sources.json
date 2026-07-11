@@ -1,0 +1,31 @@
+{
+  "_comment": "فقط منابعی که در این فایل با enabled=true مشخص شده‌اند دریافت می‌شوند. هیچ منبع ناشناسی به‌صورت خودکار اضافه نمی‌شود.",
+  "github_sources": [
+    {
+      "name": "Example Source One",
+      "url": "https://raw.githubusercontent.com/example/repo/main/sub.txt",
+      "enabled": false
+    }
+  ],
+  "subscription_sources": [
+    {
+      "name": "Example Subscription",
+      "url": "https://example.com/sub.txt",
+      "enabled": false
+    }
+  ],
+  "telegram_sources": [],
+  "manual_sources": [
+    {
+      "name": "Manual Config File",
+      "path": "data/manual.txt",
+      "enabled": false
+    }
+  ],
+  "settings": {
+    "request_timeout_seconds": 10,
+    "max_retries": 2,
+    "max_file_size_bytes": 5000000,
+    "user_agent": "config-aggregator-bot/1.0"
+  }
+}
