@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>یام‌یام پروکسی | تجمیع‌کننده کانفیگ‌های رایگان VPN</title>
+<meta name="description" content="تجمیع، دسته‌بندی و انتشار کانفیگ‌های رایگان و عمومی VPN از منابع باز" />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <img id="brand-logo" src="assets/logo.png" alt="" class="brand-logo" />
+      <span id="brand-name" class="brand-name">یام‌یام پروکسی</span>
+    </div>
+    <nav class="main-nav">
+      <a href="#servers">سرورها</a>
+      <a href="#howto">راهنما</a>
+      <a href="#sources">منابع</a>
+      <a href="#faq">سوالات</a>
+      <a href="#warning">هشدار</a>
+    </nav>
+    <a id="brand-telegram" class="btn btn-ghost" href="https://t.me/YamYamProxy" target="_blank" rel="noopener">تلگرام</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero container">
+    <div class="hero-copy">
+      <span class="eyebrow">آزاد · باز · بدون ثبت‌نام</span>
+      <h1>کانفیگ‌های رایگان VPN، <span class="accent">همیشه به‌روز</span></h1>
+      <p class="lead">این پروژه کانفیگ‌های عمومی منتشرشده در مخازن GitHub و منابع باز را هر ۶ ساعت جمع‌آوری، پاک‌سازی و در یک لینک Subscription واحد منتشر می‌کند.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="copy-sub-btn">کپی لینک Subscription</button>
+        <button class="btn btn-secondary" id="show-qr-btn">نمایش QR Code</button>
+      </div>
+      <div class="hero-actions secondary-actions">
+        <button class="btn btn-outline" id="import-v2rayng">افزودن به v2rayNG</button>
+        <button class="btn btn-outline" id="import-hiddify">افزودن به Hiddify</button>
+        <button class="btn btn-outline" id="import-nekobox">افزودن به NekoBox</button>
+      </div>
+    </div>
+    <div class="hero-panel glass">
+      <div class="hero-panel-title">وضعیت لحظه‌ای</div>
+      <div class="stat-grid">
+        <div class="stat"><span class="stat-value" id="stat-total">–</span><span class="stat-label">کل کانفیگ‌ها</span></div>
+        <div class="stat"><span class="stat-value" id="stat-online">–</span><span class="stat-label">آنلاین</span></div>
+        <div class="stat"><span class="stat-value" id="stat-secure">–</span><span class="stat-label">امن (TLS/Reality)</span></div>
+        <div class="stat"><span class="stat-value" id="stat-countries">–</span><span class="stat-label">کشور</span></div>
+        <div class="stat"><span class="stat-value" id="stat-sources">–</span><span class="stat-label">منبع فعال</span></div>
+        <div class="stat"><span class="stat-value" id="stat-updated">–</span><span class="stat-label">آخرین به‌روزرسانی</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTOCOL BREAKDOWN -->
+  <section class="container section">
+    <h2 class="section-title">توزیع پروتکل‌ها</h2>
+    <div id="protocol-bars" class="protocol-bars"></div>
+  </section>
+
+  <!-- SERVERS -->
+  <section class="container section" id="servers">
+    <h2 class="section-title">سرورها</h2>
+    <div class="toolbar glass">
+      <input id="search-input" type="search" placeholder="جستجوی نام یا آدرس سرور…" />
+      <select id="filter-protocol">
+        <option value="">همه پروتکل‌ها</option>
+      </select>
+      <select id="filter-country">
+        <option value="">همه کشورها</option>
+      </select>
+      <select id="filter-security">
+        <option value="">همه (امن/ناامن)</option>
+        <option value="secure">فقط امن</option>
+        <option value="insecure">فقط بدون TLS</option>
+      </select>
+      <select id="sort-by">
+        <option value="latency">مرتب‌سازی: کمترین پینگ</option>
+        <option value="country">مرتب‌سازی: کشور</option>
+        <option value="name">مرتب‌سازی: نام</option>
+      </select>
+      <button class="btn btn-ghost" id="refresh-btn">تازه‌سازی</button>
+    </div>
+    <div id="server-list" class="server-list"></div>
+    <p id="server-empty" class="empty-state" hidden>هیچ سروری با این فیلتر پیدا نشد.</p>
+  </section>
+
+  <!-- HOWTO -->
+  <section class="container section" id="howto">
+    <h2 class="section-title">راهنمای اتصال</h2>
+    <div class="howto-grid">
+      <div class="glass card">
+        <h3>v2rayNG / v2rayN</h3>
+        <p>روی «افزودن به v2rayNG» بزنید یا لینک Subscription را کپی و در برنامه به‌صورت دستی وارد کنید.</p>
+      </div>
+      <div class="glass card">
+        <h3>Hiddify / NekoBox</h3>
+        <p>از دکمه‌های اختصاصی بالای صفحه استفاده کنید یا لینک را در بخش افزودن Subscription برنامه Paste کنید.</p>
+      </div>
+      <div class="glass card">
+        <h3>Shadowrocket / Streisand</h3>
+        <p>لینک Subscription را کپی کرده و در بخش Add Subscription برنامه وارد کنید.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="container section" id="sources">
+    <h2 class="section-title">منابع</h2>
+    <p class="muted">کانفیگ‌ها از مخازن عمومی GitHub، فایل‌های Subscription عمومی و منابع دستی جمع‌آوری می‌شوند. فهرست کامل منابع در فایل
+      <code>data/sources.json</code> این مخزن قابل مشاهده است.</p>
+    <a class="btn btn-outline" id="brand-github" href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME" target="_blank" rel="noopener">مشاهده مخزن GitHub</a>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container section" id="faq">
+    <h2 class="section-title">سوالات متداول</h2>
+    <div class="faq-list">
+      <details class="glass">
+        <summary>آیا این یک سرویس VPN اختصاصی است؟</summary>
+        <p>خیر. این پروژه صرفاً کانفیگ‌های رایگان و عمومی منتشرشده توسط دیگران را جمع‌آوری و دسته‌بندی می‌کند و مالک هیچ سروری نیست.</p>
+      </details>
+      <details class="glass">
+        <summary>چرا برخی سرورها آفلاین نشان داده می‌شوند؟</summary>
+        <p>سرورهای عمومی رایگان ممکن است هر لحظه توسط صاحبشان تغییر کنند یا از دسترس خارج شوند. بررسی وضعیت هر چند ساعت یک‌بار انجام می‌شود.</p>
+      </details>
+      <details class="glass">
+        <summary>آیا استفاده از این کانفیگ‌ها امن است؟</summary>
+        <p>امنیت کامل هیچ کانفیگ رایگانی تضمین‌شده نیست. لطفاً بخش هشدار امنیتی را پیش از استفاده مطالعه کنید.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- SECURITY WARNING -->
+  <section class="container section" id="warning">
+    <div class="warning-box glass">
+      <h2>⚠ هشدار امنیتی و حقوقی</h2>
+      <p>این پروژه صرفاً کانفیگ‌های رایگان و عمومی منتشرشده در منابع مختلف را جمع‌آوری و دسته‌بندی می‌کند. سرورها متعلق به این پروژه نیستند و امنیت، پایداری، سرعت، حریم خصوصی یا سیاست نگهداری لاگ آن‌ها تضمین نمی‌شود. از این کانفیگ‌ها برای بانکداری، کیف پول رمزارز، صرافی، ایمیل اصلی، اطلاعات کاری یا انتقال داده‌های حساس استفاده نکنید.</p>
+      <ul>
+        <li>پروژه مالک سرورها نیست</li>
+        <li>ادعای No-Log وجود ندارد</li>
+        <li>موقعیت کشور ممکن است دقیق نباشد</li>
+        <li>کانفیگ‌ها ممکن است هر لحظه غیرفعال شوند</li>
+        <li>IP کاربر ممکن است توسط اپراتور سرور ثبت شود</li>
+        <li>استفاده از پروژه بر عهده کاربر است</li>
+        <li>امنیت کامل تضمین نمی‌شود</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span id="footer-year"></span> <span class="footer-brand-name">یام‌یام پروکسی</span> — صرفاً یک تجمیع‌کننده عمومی</span>
+    <div class="footer-links">
+      <a id="footer-github" href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME" target="_blank" rel="noopener">GitHub</a>
+      <a id="footer-telegram" href="https://t.me/YamYamProxy" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- QR MODAL -->
+<div id="qr-modal" class="modal-overlay" hidden>
+  <div class="modal glass">
+    <button class="modal-close" id="qr-close">✕</button>
+    <h3>QR Code لینک Subscription</h3>
+    <div id="qr-code-container"></div>
+    <button class="btn btn-primary" id="qr-download">دانلود QR Code</button>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
