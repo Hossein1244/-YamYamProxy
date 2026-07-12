@@ -263,7 +263,14 @@
   function typeHeading() {
     const text = "کانفیگ رایگان مولتی لوکیشن";
     const el = document.getElementById("typing-text");
-    if (!el) return;
+    const box = document.getElementById("typing-heading");
+    if (!el || !box) return;
+
+    el.textContent = text;
+    const finalWidth = box.getBoundingClientRect().width;
+    box.style.width = `${finalWidth}px`;
+    el.textContent = "";
+
     let i = 0;
     const speed = 70;
     function step() {
@@ -274,6 +281,7 @@
       }
     }
     step();
+  }
   }
   async function init() {
     document.getElementById("footer-year").textContent = new Date().getFullYear();
