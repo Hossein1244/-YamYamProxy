@@ -71,6 +71,15 @@ def run_validation(records: List[Dict], previous_servers: Dict[str, Dict]) -> Li
                 continue
             if result.get("should_remove"):
                 continue
+            known_country = result.get("country") not in (None, "", "XX")
+            if known_country:
+                flag = country_flag(result.get("country", ""))
+                country_name = result.get("country_name") or "Unknown"
+                display_name = f"{flag} {country_name}".strip() if flag else country_name
+            else:
+                display_name = "یام‌یام پروکسی | @YamYamProxy"
+            result["name"] = display_name
+            result["raw"] = rename_raw_config(result.get("raw", ""), result.get("protocol", ""), display_name)
             validated.append(result)
     return validated
 
