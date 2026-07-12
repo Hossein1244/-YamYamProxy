@@ -12,12 +12,17 @@
 </head>
 <body>
 
-<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true">
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+</div>
 
 <header class="site-header">
   <div class="container header-inner">
     <div class="brand">
-      <img id="brand-logo" src="assets/logo.png" alt="" class="brand-logo" />
+      <span class="brand-logo-wrap">
+        <img id="brand-logo" src="assets/logo.png" alt="" class="brand-logo" />
+      </span>
       <span id="brand-name" class="brand-name">یام‌یام پروکسی</span>
     </div>
     <nav class="main-nav">
@@ -39,14 +44,26 @@
       <span class="eyebrow">آزاد · باز · بدون ثبت‌نام</span>
       <h1>کانفیگ‌های رایگان VPN، <span class="accent">همیشه به‌روز</span></h1>
       <p class="lead">این پروژه کانفیگ‌های عمومی منتشرشده در مخازن GitHub و منابع باز را هر ۶ ساعت جمع‌آوری، پاک‌سازی و در یک لینک Subscription واحد منتشر می‌کند.</p>
-      <div class="hero-actions">
-        <button class="btn btn-primary" id="copy-sub-btn">کپی لینک Subscription</button>
+      <div class="hero-actions-main">
+        <button class="btn-copy-sub" id="copy-sub-btn">
+          <span class="btn-copy-sub-icon">⧉</span>
+          کپی لینک Subscription
+        </button>
         <button class="btn btn-secondary" id="show-qr-btn">نمایش QR Code</button>
       </div>
-      <div class="hero-actions secondary-actions">
-        <button class="btn btn-outline" id="import-v2rayng">افزودن به v2rayNG</button>
-        <button class="btn btn-outline" id="import-hiddify">افزودن به Hiddify</button>
-        <button class="btn btn-outline" id="import-nekobox">افزودن به NekoBox</button>
+      <div class="app-card-grid">
+        <button class="app-card" id="import-v2rayng">
+          <span class="app-card-icon app-icon-v2ray">V</span>
+          <span class="app-card-label">v2rayNG</span>
+        </button>
+        <button class="app-card" id="import-hiddify">
+          <span class="app-card-icon app-icon-hiddify">H</span>
+          <span class="app-card-label">Hiddify</span>
+        </button>
+        <button class="app-card" id="import-nekobox">
+          <span class="app-card-icon app-icon-nekobox">N</span>
+          <span class="app-card-label">NekoBox</span>
+        </button>
       </div>
     </div>
     <div class="hero-panel glass">
