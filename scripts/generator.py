@@ -17,8 +17,7 @@ from collector import collect
 from parser import parse_all
 from deduplicator import deduplicate
 from validator import validate_server
-from common import config_to_dict, load_json, save_json
-
+from common import config_to_dict, load_json, save_json, country_flag, rename_raw_config
 MAX_SERVERS_PER_RUN = 500
 VALIDATION_WORKERS = 25
 
