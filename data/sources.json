@@ -18,7 +18,22 @@
     { "name": "Argh94 Proxy-List", "url": "https://github.com/Argh94/Proxy-List/raw/refs/heads/main/All_Config.txt", "enabled": true }
   ],
   "subscription_sources": [],
-  "telegram_sources": [],
+  "telegram_sources": [
+    { "name": "UnlimitConfig", "channel": "UnlimitConfig", "enabled": true },
+    { "name": "persianvpnhub", "channel": "persianvpnhub", "enabled": true },
+    { "name": "proxy_kafee", "channel": "proxy_kafee", "enabled": true },
+    { "name": "YamYamProxy", "channel": "YamYamProxy", "enabled": true },
+    { "name": "JavidanNet", "channel": "JavidanNet", "enabled": true },
+    { "name": "ConfigFast", "channel": "ConfigFast", "enabled": true },
+    { "name": "Zed_NetMeli", "channel": "Zed_NetMeli", "enabled": true },
+    { "name": "erfanandroid", "channel": "erfanandroid", "enabled": true },
+    { "name": "configshere", "channel": "configshere", "enabled": true },
+    { "name": "cpy_teeL", "channel": "cpy_teeL", "enabled": true },
+    { "name": "MARAMBASHI", "channel": "MARAMBASHI", "enabled": true },
+    { "name": "meliproxyy", "channel": "meliproxyy", "enabled": true },
+    { "name": "SRCVPN", "channel": "SRCVPN", "enabled": true },
+    { "name": "anty_filter", "channel": "anty_filter", "enabled": true }
+  ],
   "manual_sources": [
     { "name": "Manual Config File", "path": "data/manual.txt", "enabled": false }
   ],
