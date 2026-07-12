@@ -182,15 +182,14 @@ def _parse_generic_uri(line: str, protocol: str) -> ParsedConfig:
     cfg = ParsedConfig(raw=line, protocol=protocol)
     try:
         parsed = urlparse(line)
-    except Exception:
-        cfg.reject_reason = "url parse failed"
+        cfg.address = parsed.hostname or ""
+        cfg.port = parsed.port or 0
+        cfg.uuid_or_password = unquote(parsed.username or "")
+    except (ValueError, Exception):
+        cfg.reject_reason = "url parse failed (possibly malformed IPv6 address)"
         return cfg
 
-    cfg.address = parsed.hostname or ""
-    cfg.port = parsed.port or 0
-    cfg.uuid_or_password = unquote(parsed.username or "")
     cfg.name = unquote(parsed.fragment or "") or f"{protocol}-{cfg.address}"
-
     query = parse_qs(parsed.query)
     cfg.transport = (query.get("type") or query.get("network") or ["tcp"])[0]
     security = (query.get("security") or ["none"])[0].lower()
