@@ -8,6 +8,8 @@ collector.py
 """
 from __future__ import annotations
 
+import html
+import re
 import sys
 import time
 import urllib.request
@@ -17,6 +19,7 @@ from typing import List, Dict
 from common import load_json
 
 SOURCES_PATH = "data/sources.json"
+TELEGRAM_PREVIEW_URL = "https://t.me/s/{channel}"
 
 
 def fetch_url(url: str, timeout: int, max_size: int, retries: int, user_agent: str) -> str:
@@ -35,6 +38,27 @@ def fetch_url(url: str, timeout: int, max_size: int, retries: int, user_agent: s
             time.sleep(1)
     print(f"[collector] failed to fetch {url}: {last_error}", file=sys.stderr)
     return ""
+
+
+def strip_html(raw_html: str) -> str:
+    """حذف تگ‌های HTML و Decode کردن Entity ها تا فقط متن خام پیام‌ها بماند."""
+    text = re.sub(r"<br\s*/?>", "\n", raw_html)
+    text = re.sub(r"<[^>]+>", " ", text)
+    return html.unescape(text)
+
+
+def fetch_telegram_channel(channel: str, timeout: int, max_size: int, retries: int, user_agent: str) -> str:
+    """
+    محتوای صفحه‌ی پیش‌نمایش عمومی یک کانال تلگرام را می‌گیرد (t.me/s/channel).
+    این صفحه توسط خود تلگرام برای مشاهده‌ی عمومی بدون نیاز به لاگین یا API Key
+    ارائه می‌شود و فقط برای کانال‌های عمومی (Public) کار می‌کند.
+    """
+    channel = channel.strip().lstrip("@")
+    url = TELEGRAM_PREVIEW_URL.format(channel=channel)
+    raw_html = fetch_url(url, timeout, max_size, retries, user_agent)
+    if not raw_html:
+        return ""
+    return strip_html(raw_html)
 
 
 def collect() -> List[Dict[str, str]]:
@@ -77,15 +101,24 @@ def collect() -> List[Dict[str, str]]:
         except FileNotFoundError:
             continue
 
-    # منابع تلگرام: در نسخه اولیه فقط از طریق فایل واسط عمومی خوانده می‌شوند.
-    # پشتیبانی مستقیم از Telegram Bot API (برای کانال متعلق به مدیر پروژه)
-    # می‌تواند بعداً اضافه شود و توکن آن فقط از GitHub Secrets خوانده شود،
-    # هرگز داخل کد یا لاگ چاپ نمی‌شود.
+    # منابع تلگرام: فقط کانال‌های عمومی، از طریق صفحه‌ی پیش‌نمایش رسمی خود
+    # تلگرام (t.me/s/channel) که بدون لاگین یا API Key در دسترس است.
+    # هیچ محدودیت دسترسی دور زده نمی‌شود و هیچ اطلاعات حساب کاربری استفاده نمی‌شود.
     for source in sources.get("telegram_sources", []):
         if not source.get("enabled"):
             continue
-        print(f"[collector] telegram source '{source.get('name')}' skipped "
-              f"(not implemented in base version)", file=sys.stderr)
+        channel = source.get("channel")
+        if not channel:
+            print(f"[collector] telegram source '{source.get('name')}' has no 'channel' field, skipped",
+                  file=sys.stderr)
+            continue
+        content = fetch_telegram_channel(channel, timeout, max_size, retries, user_agent)
+        if content:
+            results.append({
+                "source_name": source.get("name", channel),
+                "source_url": TELEGRAM_PREVIEW_URL.format(channel=channel.lstrip("@")),
+                "content": content,
+            })
 
     return results
 
