@@ -307,7 +307,5 @@
     setupQRModal();
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    typeHeading();
-    init();
-  });
+  document.addEventListener("DOMContentLoaded", init);
+})();
