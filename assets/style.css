@@ -193,6 +193,7 @@ a { color: inherit; }
   padding: 72px 20px 40px;
 }
 .hero-title-box {
+  box-sizing: border-box;
   display: inline-block;
   padding: 16px 28px;
   border-radius: 18px;
