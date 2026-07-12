@@ -15,7 +15,7 @@ import urllib.request
 import urllib.error
 from typing import Dict, Optional
 
-CHECK_TIMEOUT_SECONDS = 5
+CHECK_TIMEOUT_SECONDS = 3
 MAX_CONSECUTIVE_FAILURES = 3
 
 # سرویس رایگان و عمومی برای تشخیص تقریبی کشور از روی IP.
