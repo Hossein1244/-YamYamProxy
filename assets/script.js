@@ -227,7 +227,6 @@
       window.location.href = `hiddify://import/${encoded}`;
     });
     document.getElementById("import-nekobox").addEventListener("click", () => {
-      // NekoBox فرمت Deep Link رسمی مستندشده‌ی یکسانی ندارد؛ به‌صورت پیش‌فرض کپی می‌کنیم
       copyToClipboard(subUrl, "لینک کپی شد — در NekoBox، Import from Clipboard را بزنید");
     });
   }
@@ -238,7 +237,6 @@
 
     document.getElementById("show-qr-btn").addEventListener("click", () => {
       container.innerHTML = "";
-      // eslint-disable-next-line no-undef
       new QRCode(container, {
         text: subscriptionUrl(),
         width: 220,
@@ -260,29 +258,14 @@
     });
   }
 
-  function typeHeading() {
-    const text = "کانفیگ رایگان مولتی لوکیشن";
-    const el = document.getElementById("typing-text");
-    const box = document.getElementById("typing-heading");
-    if (!el || !box) return;
-
-    el.textContent = text;
-    const finalWidth = box.getBoundingClientRect().width;
-    box.style.width = `${finalWidth}px`;
-    el.textContent = "";
-
-    let i = 0;
-    const speed = 70;
-    function step() {
-      if (i <= text.length) {
-        el.textContent = text.slice(0, i);
-        i++;
-        setTimeout(step, speed);
-      }
-    }
-    step();
+  function setupFilterListeners() {
+    ["search-input", "filter-protocol", "filter-country", "filter-security", "sort-by"].forEach(id => {
+      document.getElementById(id).addEventListener("input", applyFilters);
+      document.getElementById(id).addEventListener("change", applyFilters);
+    });
+    document.getElementById("refresh-btn").addEventListener("click", () => location.reload());
   }
-  }
+
   async function init() {
     document.getElementById("footer-year").textContent = new Date().getFullYear();
 
