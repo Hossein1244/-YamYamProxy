@@ -260,14 +260,21 @@
     });
   }
 
-  function setupFilterListeners() {
-    ["search-input", "filter-protocol", "filter-country", "filter-security", "sort-by"].forEach(id => {
-      document.getElementById(id).addEventListener("input", applyFilters);
-      document.getElementById(id).addEventListener("change", applyFilters);
-    });
-    document.getElementById("refresh-btn").addEventListener("click", () => location.reload());
+  function typeHeading() {
+    const text = "کانفیگ رایگان مولتی لوکیشن";
+    const el = document.getElementById("typing-text");
+    if (!el) return;
+    let i = 0;
+    const speed = 70;
+    function step() {
+      if (i <= text.length) {
+        el.textContent = text.slice(0, i);
+        i++;
+        setTimeout(step, speed);
+      }
+    }
+    step();
   }
-
   async function init() {
     document.getElementById("footer-year").textContent = new Date().getFullYear();
 
@@ -292,5 +299,7 @@
     setupQRModal();
   }
 
-  document.addEventListener("DOMContentLoaded", init);
-})();
+  document.addEventListener("DOMContentLoaded", () => {
+    typeHeading();
+    init();
+  });
