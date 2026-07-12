@@ -362,6 +362,9 @@ def rename_raw_config(raw: str, protocol: str, display_name: str) -> str:
     try:
         if protocol == "vmess":
             payload = raw[len("vmess://"):]
+            # بعضی کانفیگ‌های vmess یک #نام بیرون از Base64 هم دارند
+            # (فرمت غیررسمی ولی رایج) که باید قبل از Decode حذف شود.
+            payload = payload.split("#", 1)[0]
             decoded = safe_b64decode(payload)
             if not decoded:
                 return raw
