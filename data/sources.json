@@ -1,31 +1,44 @@
 {
-  "_comment": "فقط منابعی که در این فایل با enabled=true مشخص شده‌اند دریافت می‌شوند. هیچ منبع ناشناسی به‌صورت خودکار اضافه نمی‌شود.",
+  "_comment": "فقط منابعی که در این فایل با enabled=true مشخص شده‌اند دریافت می‌شوند.",
+
   "github_sources": [
-    {
-      "name": "Example Source One",
-      "url": "https://raw.githubusercontent.com/example/repo/main/sub.txt",
-      "enabled": false
-    }
-  ],
-  "subscription_sources": [
-    {
-      "name": "Example Subscription",
-      "url": "https://example.com/sub.txt",
-      "enabled": false
-    }
-  ],
-  "telegram_sources": [],
-  "manual_sources": [
-    {
-      "name": "Manual Config File",
-      "path": "data/manual.txt",
-      "enabled": false
-    }
-  ],
-  "settings": {
-    "request_timeout_seconds": 10,
-    "max_retries": 2,
-    "max_file_size_bytes": 5000000,
-    "user_agent": "config-aggregator-bot/1.0"
-  }
-}
+    { "name": "barry-far vmess", "url": "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt", "enabled": true },
+    { "name": "barry-far vless", "url": "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt", "enabled": true },
+    { "name": "barry-far trojan", "url": "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/trojan.txt", "enabled": true },
+    { "name": "barry-far ss", "url": "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ss.txt", "enabled": true },
+    { "name": "barry-far ssr", "url": "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ssr.txt", "enabled": true },
+    { "name": "Epodonios All_Configs_Sub", "url": "https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt", "enabled": true },
+    { "name": "Epodonios Sub1", "url": "https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub1.txt", "enabled": true },
+    { "name": "Epodonios Sub2", "url": "https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub2.txt", "enabled": true },
+    { "name": "Epodonios vmess splitted", "url": "https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vmess.txt", "enabled": true },
+    { "name": "ebrasha main list", "url": "https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/V2Ray-Config-By-EbraSha.txt", "enabled": true },
+    { "name": "ebrasha ss_configs", "url": "https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/ss_configs.txt", "enabled": true },
+    { "name": "MatinGhanbari super-sub", "url": "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/super-sub.txt", "enabled": true },
+    { "name": "MatinGhanbari vless", "url": "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt", "enabled": true },
+    { "name": "MatinGhanbari vmess", "url": "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vmess.txt", "enabled": true },
+    { "name": "MatinGhanbari trojan", "url": "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/trojan.txt", "enabled": true },
+    { "name": "MatinGhanbari ss", "url": "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/ss.txt", "enabled": true },
+    { "name": "MatinGhanbari hysteria2", "url": "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/hysteria2.txt", "enabled": true },
+    { "name": "V2RayRoot vless", "url": "https://raw.githubusercontent.com/V2RayRoot/V2RayConfig/refs/heads/main/Config/vless.txt", "enabled": true },
+    { "name": "shabane kamaji merged", "url": "https://raw.githubusercontent.com/shabane/kamaji/master/hub/merged.txt", "enabled": true },
+    { "name": "AvenCores goida 1", "url": "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/githubmirror/1.txt", "enabled": true },
+    { "name": "AvenCores goida 26", "url": "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/26.txt", "enabled": true },
+    { "name": "mohamadfg-dev vless", "url": "https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/refs/heads/main/category/vless.txt", "enabled": true },
+    { "name": "mohamadfg-dev httpupgrade", "url": "https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/refs/heads/main/category/httpupgrade.txt", "enabled": true },
+    { "name": "mohamadfg-dev xhttp", "url": "https://raw.githubusercontent.com/mohamadfg-dev/telegram-v2ray-configs-collector/refs/heads/main/category/xhttp.txt", "enabled": true },
+    { "name": "LalatinaHub Mineral nodes", "url": "https://github.com/LalatinaHub/Mineral/raw/refs/heads/master/result/nodes", "enabled": true },
+    { "name": "4n0nymou3 proxy_configs", "url": "https://github.com/4n0nymou3/multi-proxy-config-fetcher/raw/refs/heads/main/configs/proxy_configs.txt", "enabled": true },
+    { "name": "10ium V2ray-Config hysteria2", "url": "https://raw.githubusercontent.com/10ium/V2ray-Config/main/Splitted-By-Protocol/hysteria2.txt", "enabled": true },
+    { "name": "10ium V2Hub3 base64", "url": "https://raw.githubusercontent.com/10ium/V2Hub3/main/merged_base64", "enabled": true },
+    { "name": "10ium V2Hub3 shadowsocks", "url": "https://raw.githubusercontent.com/10ium/V2Hub3/refs/heads/main/Split/Normal/shadowsocks", "enabled": true },
+    { "name": "10ium V2Hub3 reality", "url": "https://raw.githubusercontent.com/10ium/V2Hub3/refs/heads/main/Split/Normal/reality", "enabled": true },
+    { "name": "10ium base64-encoder mixed", "url": "https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/10ium_mixed_iran.txt", "enabled": true },
+    { "name": "10ium Scrape Vless", "url": "https://raw.githubusercontent.com/10ium/ScrapeAndCategorize/refs/heads/main/output_configs/Vless.txt", "enabled": true },
+    { "name": "10ium Scrape ShadowSocks", "url": "https://raw.githubusercontent.com/10ium/ScrapeAndCategorize/refs/heads/main/output_configs/ShadowSocks.txt", "enabled": true },
+    { "name": "10ium Scrape Trojan", "url": "https://raw.githubusercontent.com/10ium/ScrapeAndCategorize/refs/heads/main/output_configs/Trojan.txt", "enabled": true },
+    { "name": "sakha1370 OpenRay", "url": "https://raw.githubusercontent.com/sakha1370/OpenRay/refs/heads/main/output/all_valid_proxies.txt", "enabled": true },
+    { "name": "sevcator 5ubscrpt10n vl", "url": "https://raw.githubusercontent.com/sevcator/5ubscrpt10n/main/protocols/vl.txt", "enabled": true },
+    { "name": "yitong2333 proxy-minging", "url": "https://raw.githubusercontent.com/yitong2333/proxy-minging/refs/heads/main/v2ray.txt", "enabled": true },
+    { "name": "wuqb2i4f xray-config-toolkit", "url": "https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/main/output/base64/mix-uri", "enabled": true },
+    { "name": "acymz AutoVPN", "url": "https://raw.githubusercontent.com/acymz/AutoVPN/refs/heads/main/data/V2.txt", "enabled": true },
+    { "name": "CidVpn cid-vpn-config", "url": "https://raw.githubusercontent.com/CidVpn/cid-vpn-config/refs/
