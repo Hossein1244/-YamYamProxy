@@ -15,7 +15,7 @@ import re
 import socket
 from dataclasses import dataclass, field, asdict
 from typing import Optional
-from urllib.parse import urlparse, parse_qs, unquote
+from urllib.parse import urlparse, parse_qs, unquote, quote
 
 # ---------------------------------------------------------------------------
 # پروتکل‌های پشتیبانی‌شده و Scheme متناظرشان
@@ -186,10 +186,13 @@ def _parse_generic_uri(line: str, protocol: str) -> ParsedConfig:
         cfg.port = parsed.port or 0
         cfg.uuid_or_password = unquote(parsed.username or "")
     except (ValueError, Exception):
+        # می‌تونه به‌خاطر IPv6 بدون براکت یا فرمت غیراستاندارد رخ بده؛
+        # به‌جای متوقف‌کردن کل اجرا، فقط همین کانفیگ رد می‌شود.
         cfg.reject_reason = "url parse failed (possibly malformed IPv6 address)"
         return cfg
 
     cfg.name = unquote(parsed.fragment or "") or f"{protocol}-{cfg.address}"
+
     query = parse_qs(parsed.query)
     cfg.transport = (query.get("type") or query.get("network") or ["tcp"])[0]
     security = (query.get("security") or ["none"])[0].lower()
@@ -340,3 +343,35 @@ def config_to_dict(cfg: ParsedConfig) -> dict:
     d = asdict(cfg)
     d["id"] = cfg.unique_key()
     return d
+
+
+def country_flag(country_code: str) -> str:
+    """تبدیل کد دو حرفی کشور (مثل DE) به ایموجی پرچم. اگر نامعتبر بود، رشته خالی برمی‌گرداند."""
+    code = (country_code or "").strip().upper()
+    if len(code) != 2 or not code.isalpha():
+        return ""
+    return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in code)
+
+
+def rename_raw_config(raw: str, protocol: str, display_name: str) -> str:
+    """
+    نام نمایشی کانفیگ (بخشی که در اپ‌های کلاینت دیده می‌شود) را با display_name
+    جایگزین می‌کند. برای vmess نام داخل JSON بازنویسی می‌شود؛ برای بقیه پروتکل‌ها
+    بخش fragment (بعد از #) بازنویسی می‌شود. در صورت هر خطایی، raw اصلی بدون تغییر برمی‌گردد.
+    """
+    try:
+        if protocol == "vmess":
+            payload = raw[len("vmess://"):]
+            decoded = safe_b64decode(payload)
+            if not decoded:
+                return raw
+            data = json.loads(decoded)
+            data["ps"] = display_name
+            new_json = json.dumps(data, ensure_ascii=False)
+            new_b64 = base64.b64encode(new_json.encode("utf-8")).decode("utf-8")
+            return f"vmess://{new_b64}"
+        else:
+            base = raw.split("#", 1)[0]
+            return f"{base}#{quote(display_name)}"
+    except Exception:
+        return raw
