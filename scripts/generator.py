@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import base64
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Dict, List
 
 from collector import collect
@@ -17,6 +18,9 @@ from parser import parse_all
 from deduplicator import deduplicate
 from validator import validate_server
 from common import config_to_dict, load_json, save_json
+
+MAX_SERVERS_PER_RUN = 500
+VALIDATION_WORKERS = 25
 
 SERVERS_PATH = "data/servers.json"
 STATUS_PATH = "data/status.json"
@@ -53,13 +57,21 @@ def build_server_records(deduped_items: List[Dict], previous_servers: Dict[str, 
 
 
 def run_validation(records: List[Dict], previous_servers: Dict[str, Dict]) -> List[Dict]:
+    records = records[:MAX_SERVERS_PER_RUN]
     validated = []
-    for record in records:
-        prev_state = previous_servers.get(record["id"])
-        result = validate_server(record, prev_state)
-        if result.get("should_remove"):
-            continue
-        validated.append(result)
+    with ThreadPoolExecutor(max_workers=VALIDATION_WORKERS) as executor:
+        future_to_record = {
+            executor.submit(validate_server, record, previous_servers.get(record["id"])): record
+            for record in records
+        }
+        for future in as_completed(future_to_record):
+            try:
+                result = future.result()
+            except Exception:
+                continue
+            if result.get("should_remove"):
+                continue
+            validated.append(result)
     return validated
 
 
