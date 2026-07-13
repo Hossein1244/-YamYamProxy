@@ -366,12 +366,15 @@ function applyFilters() {
     renderStats(status);
     renderProtocolBars(state.servers);
     populateFilterOptions(state.servers);
-    renderServerList(state.servers);
+    const initialEmpty = document.getElementById("server-empty");
+    initialEmpty.textContent = "برای مشاهده‌ی سرورها، جستجو کنید یا یکی از فیلترها را انتخاب کنید.";
+    initialEmpty.hidden = false;
 
     setupFilterListeners();
     setupDeepLinks();
     setupQRModal();
     setupPlatformModals();
+  }
   }
 
   document.addEventListener("DOMContentLoaded", init);
