@@ -167,7 +167,7 @@
     }[m]));
   }
 
-function applyFilters() {
+  function applyFilters() {
     const q = document.getElementById("search-input").value.trim().toLowerCase();
     const protocol = document.getElementById("filter-protocol").value;
     const country = document.getElementById("filter-country").value;
@@ -374,7 +374,6 @@ function applyFilters() {
     setupDeepLinks();
     setupQRModal();
     setupPlatformModals();
-  }
   }
 
   document.addEventListener("DOMContentLoaded", init);
