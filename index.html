@@ -196,9 +196,34 @@
   </div>
 </div>
 
+<!-- PLATFORM APPS MODAL -->
+<div id="platform-apps-modal" class="modal-overlay" hidden>
+  <div class="modal glass modal-wide">
+    <button class="modal-close" id="platform-apps-close">✕</button>
+    <h3 id="platform-apps-title">برنامه‌ها</h3>
+    <div id="platform-apps-list" class="platform-apps-list"></div>
+  </div>
+</div>
+
+<!-- APP DETAIL MODAL -->
+<div id="app-detail-modal" class="modal-overlay" hidden>
+  <div class="modal glass modal-wide">
+    <button class="modal-close" id="app-detail-close">✕</button>
+    <button class="modal-back" id="app-detail-back">→ بازگشت</button>
+    <h3 id="app-detail-title"></h3>
+    <a class="btn btn-primary app-detail-download" id="app-detail-download" target="_blank" rel="noopener">دانلود برنامه</a>
+    <h4 class="app-detail-steps-title">آموزش افزودن لینک Subscription</h4>
+    <ol id="app-detail-steps" class="app-detail-steps"></ol>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+</div>
+
 <div id="toast" class="toast" hidden></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="assets/apps-data.js"></script>
 <script src="assets/script.js"></script>
 </body>
 </html>
