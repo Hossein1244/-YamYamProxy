@@ -48,7 +48,6 @@
     if (state.brand && state.brand.subscription_url && !state.brand.subscription_url.includes("YOUR_")) {
       return state.brand.subscription_url;
     }
-    // fallback: مسیر نسبی روی همان دامنه GitHub Pages
     return new URL("data/sub.txt", window.location.href).toString();
   }
 
@@ -213,21 +212,9 @@
 
   function setupDeepLinks() {
     const subUrl = subscriptionUrl();
-    const encoded = encodeURIComponent(subUrl);
 
     document.getElementById("copy-sub-btn").addEventListener("click", () => {
       copyToClipboard(subUrl, "لینک Subscription کپی شد");
-    });
-
-    // فقط از Deep Link های شناخته‌شده و مستند استفاده می‌شود
-    document.getElementById("import-v2rayng").addEventListener("click", () => {
-      window.location.href = `v2rayng://install-config?url=${encoded}`;
-    });
-    document.getElementById("import-hiddify").addEventListener("click", () => {
-      window.location.href = `hiddify://import/${encoded}`;
-    });
-    document.getElementById("import-nekobox").addEventListener("click", () => {
-      copyToClipboard(subUrl, "لینک کپی شد — در NekoBox، Import from Clipboard را بزنید");
     });
   }
 
@@ -266,6 +253,90 @@
     document.getElementById("refresh-btn").addEventListener("click", () => location.reload());
   }
 
+  function typeHeading() {
+    const text = "کانفیگ رایگان مولتی لوکیشن";
+    const el = document.getElementById("typing-text");
+    const box = document.getElementById("typing-heading");
+    if (!el || !box) return;
+
+    el.textContent = text;
+    const finalWidth = box.getBoundingClientRect().width;
+    box.style.width = `${finalWidth}px`;
+    el.textContent = "";
+
+    let i = 0;
+    const speed = 70;
+    function step() {
+      if (i <= text.length) {
+        el.textContent = text.slice(0, i);
+        i++;
+        setTimeout(step, speed);
+      }
+    }
+    step();
+  }
+
+  function setupPlatformModals() {
+    const platformModal = document.getElementById("platform-apps-modal");
+    const platformTitle = document.getElementById("platform-apps-title");
+    const platformList = document.getElementById("platform-apps-list");
+    const detailModal = document.getElementById("app-detail-modal");
+    const detailTitle = document.getElementById("app-detail-title");
+    const detailDownload = document.getElementById("app-detail-download");
+    const detailSteps = document.getElementById("app-detail-steps");
+
+    const platformsData = window.PLATFORM_APPS || {};
+    let currentPlatformKey = null;
+
+    function openPlatformModal(platformKey) {
+      const platform = platformsData[platformKey];
+      if (!platform) return;
+      currentPlatformKey = platformKey;
+      platformTitle.textContent = `${platform.emoji} برنامه‌های ${platform.label}`;
+      platformList.innerHTML = "";
+      platform.apps.forEach((app, index) => {
+        const item = document.createElement("button");
+        item.className = "platform-app-item";
+        item.innerHTML = `<span class="platform-app-emoji">${app.emoji}</span><span>${escapeHTML(app.name)}</span>`;
+        item.addEventListener("click", () => {
+          platformModal.hidden = true;
+          openAppDetail(platformKey, index);
+        });
+        platformList.appendChild(item);
+      });
+      platformModal.hidden = false;
+    }
+
+    function openAppDetail(platformKey, appIndex) {
+      const platform = platformsData[platformKey];
+      const app = platform && platform.apps[appIndex];
+      if (!app) return;
+      detailTitle.textContent = `${app.emoji} ${app.name}`;
+      detailDownload.href = app.download;
+      detailSteps.innerHTML = "";
+      app.steps.forEach(step => {
+        const li = document.createElement("li");
+        li.textContent = step;
+        detailSteps.appendChild(li);
+      });
+      detailModal.hidden = false;
+    }
+
+    document.querySelectorAll(".platform-card").forEach(btn => {
+      btn.addEventListener("click", () => openPlatformModal(btn.getAttribute("data-platform")));
+    });
+
+    document.getElementById("platform-apps-close").addEventListener("click", () => { platformModal.hidden = true; });
+    platformModal.addEventListener("click", (e) => { if (e.target === platformModal) platformModal.hidden = true; });
+
+    document.getElementById("app-detail-close").addEventListener("click", () => { detailModal.hidden = true; });
+    document.getElementById("app-detail-back").addEventListener("click", () => {
+      detailModal.hidden = true;
+      if (currentPlatformKey) openPlatformModal(currentPlatformKey);
+    });
+    detailModal.addEventListener("click", (e) => { if (e.target === detailModal) detailModal.hidden = true; });
+  }
+
   async function init() {
     document.getElementById("footer-year").textContent = new Date().getFullYear();
 
@@ -288,6 +359,7 @@
     setupFilterListeners();
     setupDeepLinks();
     setupQRModal();
+    setupPlatformModals();
   }
 
   document.addEventListener("DOMContentLoaded", init);
