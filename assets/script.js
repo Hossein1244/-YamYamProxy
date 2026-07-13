@@ -167,12 +167,23 @@
     }[m]));
   }
 
-  function applyFilters() {
+function applyFilters() {
     const q = document.getElementById("search-input").value.trim().toLowerCase();
     const protocol = document.getElementById("filter-protocol").value;
     const country = document.getElementById("filter-country").value;
     const security = document.getElementById("filter-security").value;
     const sortBy = document.getElementById("sort-by").value;
+
+    const hasActiveQuery = Boolean(q || protocol || country || security);
+    const empty = document.getElementById("server-empty");
+
+    if (!hasActiveQuery) {
+      document.getElementById("server-list").innerHTML = "";
+      empty.textContent = "برای مشاهده‌ی سرورها، جستجو کنید یا یکی از فیلترها را انتخاب کنید.";
+      empty.hidden = false;
+      state.filtered = [];
+      return;
+    }
 
     let result = state.servers.filter(s => {
       if (q && !(`${s.name} ${s.address}`.toLowerCase().includes(q))) return false;
@@ -191,6 +202,7 @@
     });
 
     state.filtered = result;
+    empty.textContent = "هیچ سروری با این فیلتر پیدا نشد.";
     renderServerList(result);
   }
 
