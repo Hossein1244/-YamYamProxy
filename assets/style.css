@@ -283,20 +283,20 @@ a { color: inherit; }
 .btn-copy-sub:hover { transform: translateY(-2px); box-shadow: 0 0 34px rgba(74, 222, 128, 0.6); }
 .btn-copy-sub:active { transform: translateY(0); }
 .btn-copy-sub-icon { font-size: 1.15rem; }
-.app-card-grid {
+.platform-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: 10px;
   max-width: 420px;
   margin-bottom: 12px;
 }
-.app-card {
+.platform-card {
   font-family: var(--font-display);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  padding: 14px 8px;
+  padding: 16px 8px;
   border-radius: 14px;
   background: var(--panel);
   border: 1px solid var(--panel-border);
@@ -305,22 +305,61 @@ a { color: inherit; }
   color: var(--text);
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
-.app-card:hover { transform: translateY(-2px); border-color: var(--accent-2); }
-.app-card-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+.platform-card:hover { transform: translateY(-2px); border-color: var(--accent-2); }
+.platform-emoji { font-size: 1.8rem; line-height: 1; }
+.platform-label { font-size: 0.85rem; font-weight: 700; }
+
+.modal.modal-wide { max-width: 420px; width: 100%; text-align: right; }
+.platform-apps-list { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; max-height: 60vh; overflow-y: auto; }
+.platform-app-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 1rem;
-  color: #05060a;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: right;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
-.app-icon-v2ray { background: linear-gradient(135deg, #a78bfa, #f472b6); }
-.app-icon-hiddify { background: linear-gradient(135deg, #60a5fa, #a78bfa); }
-.app-icon-nekobox { background: linear-gradient(135deg, #34d399, #22d3ee); }
-.app-card-label { font-size: 0.78rem; font-weight: 700; }
+.platform-app-item:hover { border-color: var(--accent-2); background: rgba(255, 255, 255, 0.08); }
+.platform-app-emoji { font-size: 1.15rem; }
+
+.modal-back {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.modal-back:hover { color: var(--text); }
+.app-detail-download {
+  display: block;
+  text-align: center;
+  margin: 16px 0;
+  text-decoration: none;
+}
+.app-detail-steps-title { font-size: 0.95rem; margin: 18px 0 10px; color: var(--accent-2); }
+.app-detail-steps {
+  margin: 0;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+  text-align: right;
+}
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .stat { display: flex; flex-direction: column; gap: 4px; }
 .stat-value { font-family: var(--font-mono); font-size: 1.6rem; font-weight: 700; color: var(--text); }
