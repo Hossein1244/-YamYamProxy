@@ -19,8 +19,7 @@ from typing import List, Dict
 from common import load_json
 
 SOURCES_PATH = "data/sources.json"
-TELEGRAM_PREVIEW_URL = "https://t.me/s/{channel}"
-
+TELEGRAM_PREVIEW_URL = "https://telegram.me/s/{channel}"
 
 def fetch_url(url: str, timeout: int, max_size: int, retries: int, user_agent: str) -> str:
     """دریافت محتوای یک URL با Timeout، Retry محدود و محدودیت حجم فایل."""
