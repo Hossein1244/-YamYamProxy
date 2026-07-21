@@ -1,1 +1,0 @@
-hysteria2://elknam6l7izf3z71@assets.gateway-stream.com:52002?security=tls&obfs=salamander&obfs-password=ielzukpwth087afx&insecure=0&sni=assets.gateway-stream.com#%F0%9F%87%AB%F0%9F%87%AE%20Finland
