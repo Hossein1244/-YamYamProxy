@@ -8,8 +8,9 @@ trojan://telegram-id-directvpn@13.37.56.251:22223?security=tls&alpn=http%2F1.1&i
 trojan://urhj8z8R8nBovrNsYzXhL35jLGC5ruguRh@92.119.35.131:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0#%F0%9F%87%A9%F0%9F%87%AA%20Germany
 trojan://humanity@104.16.72.41:443?path=%2Fassignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#%F0%9F%87%A8%F0%9F%87%A6%20Canada
 trojan://humanity@104.16.174.121:443?path=%2Fassignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#%F0%9F%87%A8%F0%9F%87%A6%20Canada
-trojan://fa19be80-9537-11f1-b485-1239d0255272@uk1.test3.net:443?type=tcp&security=tls&sni=uk1.test3.net&allowInsecure=1#%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom
 trojan://humanity@165.215.250.14:443?fp=chrome&host=www.calmlunch.com&path=%2Fassignment&sni=www.calmlunch.com&type=ws#%F0%9F%87%BA%F0%9F%87%B8%20United%20States
 trojan://MiTiVPN@151.101.56.8:443?fp=chrome&allowInsecure=0&alpn=http%2F1.1&host=s3z-mitivpn--mitivpn------mitivpn.global.ssl.fastly.net&security=tls&insecure=0&path=%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2Fg-b%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN&sni=default.fastly.com&type=ws#%F0%9F%87%BA%F0%9F%87%B8%20United%20States
+trojan://AE62539071@strong-haddock.rooster465.autos:443?allowInsecure=1&sni=strong-haddock.rooster465.autos#%F0%9F%87%AD%F0%9F%87%B0%20Hong%20Kong
+trojan://AE62539071@humorous-llama.rooster465.autos:443?allowInsecure=1&sni=humorous-llama.rooster465.autos#%F0%9F%87%A6%F0%9F%87%BA%20Australia
 trojan://humanity@162.159.38.119:443?path=%2Fassignment&security=tls&insecure=0&host=www.calmloud.com&type=ws&allowInsecure=0&sni=www.calmloud.com#%F0%9F%87%BA%F0%9F%87%B8%20United%20States
 trojan://521314@millionaire.levikogjgfdd.ir:443?path=%2FLeviko_v2ray&security=tls&insecure=0&host=tjplay.lxdxo.kdns.fr&type=ws&allowInsecure=0&sni=tjplay.lxdxo.kdns.fr#%F0%9F%87%A8%F0%9F%87%A6%20Canada
