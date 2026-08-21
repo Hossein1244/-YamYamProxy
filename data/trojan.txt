@@ -1,4 +1,11 @@
 trojan://PQ05174892@34.244.253.42:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=nice-elephant.rooster465.autos#%F0%9F%87%AE%F0%9F%87%AA%20Ireland
+trojan://PQ05174892@57.180.40.220:443?sni=brief-flamingo.rooster465.autos&fp=chrome&type=tcp&path=%2f#%F0%9F%87%AF%F0%9F%87%B5%20Japan
+trojan://PQ05174892@34.251.228.118:443?sni=definite-ladybird.rooster465.autos&allowInsecure=1&type=tcp#%F0%9F%87%AE%F0%9F%87%AA%20Ireland
+trojan://PQ05174892@57.180.27.225:443?sni=picked-guinea.rooster465.autos&type=tcp#%F0%9F%87%AF%F0%9F%87%B5%20Japan
+trojan://PQ05174892@18.201.47.180:443?sni=healthy-panda.rooster465.autos&type=tcp&fp=chrome#%F0%9F%87%AE%F0%9F%87%AA%20Ireland
+trojan://PQ05174892@54.93.54.137:443?sni=informed-alpaca.rooster465.autos&type=tcp&fp=chrome#%F0%9F%87%A9%F0%9F%87%AA%20Germany
+trojan://EQ30679154@3.120.37.181:443?sni=many-cricket.rooster465.autos&allowInsecure=1&type=tcp#%F0%9F%87%A9%F0%9F%87%AA%20Germany
+trojan://EQ30679154@nearby-cod.rooster465.autos:443#%F0%9F%87%AB%F0%9F%87%B7%20France
 trojan://humanity@2.144.21.112:40443?path=%2Fassignment&security=tls&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=www.ignitelimit.com#%F0%9F%87%AE%F0%9F%87%B7%20Iran
 trojan://telegram-id-directvpn@13.37.56.251:22223?security=tls&alpn=http%2F1.1&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=trojan.burgerip.co.uk#%F0%9F%87%AB%F0%9F%87%B7%20France
 trojan://urhj8z8R8nBovrNsYzXhL35jLGC5ruguRh@92.119.35.131:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0#%F0%9F%87%A9%F0%9F%87%AA%20Germany
@@ -15,11 +22,11 @@ trojan://AE62539071@game-thrush.rooster465.autos:443?allowInsecure=0&sni=game-th
 trojan://AE62539071@13.113.89.229:443?security=tls&sni=coherent-newt.rooster465.autos#%F0%9F%87%AF%F0%9F%87%B5%20Japan
 trojan://AE62539071@frank-frog.rooster465.autos:443?fp=chrome&security=tls&sni=frank-frog.rooster465.autos&type=tcp#%F0%9F%87%AF%F0%9F%87%B5%20Japan
 trojan://AE62539071@18.183.140.61:443?fp=chrome&security=tls&sni=harmless-imp.rooster465.autos&type=tcp#%F0%9F%87%AF%F0%9F%87%B5%20Japan
+trojan://AE62539071@inviting-burro.rooster465.autos:443?fp=chrome&security=tls&sni=inviting-burro.rooster465.autos&type=tcp#%F0%9F%87%AF%F0%9F%87%B5%20Japan
+trojan://7d8e6db4-96cc-4710-afc0-619edde2d7a1@160.16.110.77:55682?security=tls&insecure=0&host=v2rayNplus--v2rayNplus--v2rayNplus&headerType=none&type=tcp&allowInsecure=0&sni=t11.qifei.app#%F0%9F%87%AF%F0%9F%87%B5%20Japan
 trojan://PQ05174892@ideal-phoenix.rooster465.autos:443?allowInsecure=0&sni=ideal-phoenix.rooster465.autos#%F0%9F%87%AF%F0%9F%87%B5%20Japan
 trojan://AE62539071@enough-basilisk.rooster465.autos:443?Telegram= @GozargahAzad , @GozargahAzad , @GozargahAzad , @GozargahAzad , @GozargahAzad , @GozargahAzad , @GozargahAzad &security=tls&insecure=0&headerType=&type=tcp&allowInsecure=0#%F0%9F%87%B5%F0%9F%87%B1%20Poland
-trojan://AE62539071@inviting-burro.rooster465.autos:443?fp=chrome&security=tls&sni=inviting-burro.rooster465.autos&type=tcp#%F0%9F%87%AF%F0%9F%87%B5%20Japan
 trojan://humanity@162.159.38.119:443?path=%2Fassignment&security=tls&insecure=0&host=www.calmloud.com&type=ws&allowInsecure=0&sni=www.calmloud.com#%F0%9F%87%BA%F0%9F%87%B8%20United%20States
 trojan://521314@millionaire.levikogjgfdd.ir:443?path=%2FLeviko_v2ray&security=tls&insecure=0&host=tjplay.lxdxo.kdns.fr&type=ws&allowInsecure=0&sni=tjplay.lxdxo.kdns.fr#%F0%9F%87%A8%F0%9F%87%A6%20Canada
-trojan://6ec301428255a78a1d826988d86cc87e@95.40.43.135:50887?security=tls&insecure=0&host=v2rayNplus--v2rayNplus--v2rayNplus&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=www.nintendogames.net#%F0%9F%87%AD%F0%9F%87%B0%20Hong%20Kong
 trojan://humanity@172.67.149.60:443?path=%2Fassignment&security=tls&insecure=0&host=www.ignitelimit.com&ech=ip.gs%2Budp%3A%2F%2F8.8.8.8&type=ws&allowInsecure=0&sni=www.ignitelimit.com#%F0%9F%87%A8%F0%9F%87%A6%20Canada
 trojan://telegram-id-privatevpns@3.74.232.99:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#%F0%9F%87%A9%F0%9F%87%AA%20Germany
