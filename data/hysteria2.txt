@@ -1,1 +1,1 @@
-hysteria2://s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z@46.229.243.132:8443?insecure=1&sni=grape-turbo-fr.roxa.org#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands
+hysteria2://Telegram%3Avpnjey@179.61.138.145:36264?security=tls&obfs=salamander&obfs-password=Telegram%40vpnjey&insecure=0&sni=de2.jey.cc.cd#%DB%8C%D8%A7%D9%85%E2%80%8C%DB%8C%D8%A7%D9%85%20%D9%BE%D8%B1%D9%88%DA%A9%D8%B3%DB%8C%20%7C%20%40YamYamProxy
