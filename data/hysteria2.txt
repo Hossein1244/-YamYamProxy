@@ -1,2 +1,0 @@
-hysteria2://1aqsrdjqo46da43a@localtest120.myddns.me:11?obfs=salamander&obfs-password=tri1yhgti3kl1d8r#%F0%9F%87%BA%F0%9F%87%B8%20United%20States
-hysteria2://Telegram%3Avpnjey@179.61.138.145:36264?security=tls&obfs=salamander&obf#%DB%8C%D8%A7%D9%85%E2%80%8C%DB%8C%D8%A7%D9%85%20%D9%BE%D8%B1%D9%88%DA%A9%D8%B3%DB%8C%20%7C%20%40YamYamProxy
