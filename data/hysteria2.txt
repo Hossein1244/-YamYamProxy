@@ -1,1 +1,2 @@
 hysteria2://Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-@ir.config7x.site:26503?security=tls&insecure=0&pinSHA256=22760B9798F4726D9B76C2F8FB4D5CEE6FDA9C6A75B391137937674AC5B2505F&sni=hy.config7x.site#%F0%9F%87%AE%F0%9F%87%B7%20Iran
+hysteria2://Telegram%3Avpnjey@179.61.138.145:36264?security=tls&obfs=salamander&obf#%F0%9F%87%A9%F0%9F%87%AA%20Germany
