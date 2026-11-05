@@ -1,1 +1,0 @@
-hysteria2://xo43w4tc13ou2h3x@mein-1.octavia.dpdns.org:60000?security=tls&obfs=salamander&obfs-password=ckwudzzsfoltmbmi&insecure=0&sni=main-1.octavia.dpdns.org#%F0%9F%87%B8%F0%9F%87%AA%20Sweden
