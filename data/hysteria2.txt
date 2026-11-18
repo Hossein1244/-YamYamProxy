@@ -1,1 +1,0 @@
-hysteria2://99a271e85dbc4aa8950f9c7beee06b19@ide.vipvirtualnet.eu:30746?security=tls&obfs=salamander&obfs-password=7wjvepshx5g115x4&insecure=0&sni=del.vipvirtualnet.eu#%F0%9F%87%AE%F0%9F%87%B7%20Iran
