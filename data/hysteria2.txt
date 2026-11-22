@@ -1,3 +1,2 @@
-hysteria2://5s7qa8f78hznlw8g@3.120.145.15:41018?sni=quotes.ali-khamenei.world&obfs=salamander&obfs-password=v0qq015d7c8zgzu7#%F0%9F%87%A9%F0%9F%87%AA%20Germany
+hysteria2://fup6jqo76blcumls@13.53.131.128:33971?security=tls&obfs=salamander&alpn=h3%2Ch2%2Chttp%2F1.1&obfs-password=anhzfr8jwm3m1cb0&insecure=0&sni=se.accuratenetworkchecker.ir#%F0%9F%87%B8%F0%9F%87%AA%20Sweden
 hysteria2://eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ@152.32.254.68:5010?security=tls&obfs=salamander&obfs-password=7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9&insecure=0&sni=nas.aizhzo.com#%DB%8C%D8%A7%D9%85%E2%80%8C%DB%8C%D8%A7%D9%85%20%D9%BE%D8%B1%D9%88%DA%A9%D8%B3%DB%8C%20%7C%20%40YamYamProxy
-hysteria2://HPzKAhFXV5XgEmRSTM33DRuTHeFcB5ON@89.117.172.45:443?security=tls&obfs=salamander&obfs-password=0dRexOATy4t9J1ckKOLpPy9HrNoU5FmN&insecure=0&sni=eth.todsm.com#%DB%8C%D8%A7%D9%85%E2%80%8C%DB%8C%D8%A7%D9%85%20%D9%BE%D8%B1%D9%88%DA%A9%D8%B3%DB%8C%20%7C%20%40YamYamProxy
