@@ -1,9 +1,9 @@
 {
-  "total_configs": 473,
-  "online_configs": 386,
-  "offline_configs": 87,
-  "secure_configs": 316,
-  "countries": 41,
+  "total_configs": 465,
+  "online_configs": 407,
+  "offline_configs": 58,
+  "secure_configs": 326,
+  "countries": 34,
   "active_sources": 29,
-  "last_update": "2026-11-23T02:29:55Z"
+  "last_update": "2026-11-23T11:05:59Z"
 }
