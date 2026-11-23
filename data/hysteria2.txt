@@ -1,3 +1,4 @@
-hysteria2://5s7qa8f78hznlw8g@3.120.145.15:41018?sni=quotes.ali-khamenei.world&obfs=salamander&obfs-password=v0qq015d7c8zgzu7#%F0%9F%87%A9%F0%9F%87%AA%20Germany
+hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@hkzfsg2.mateflora.com:443?security=tls&obfs=salamander&obfs-password=fcfqz5o4znnjqtrp&insecure=0&sni=hkzfsg2.mateflora.com#%F0%9F%87%AD%F0%9F%87%B0%20Hong%20Kong
+hysteria2://247802ca-0fbb-428a-b807-91a6e571b5c7@48.103.144.118:8443?security=tls&obfs=salamander&obfs-password=JGIhnEi-CcIJOfNTqvNxX_5wRAYUZ0J2&insecure=0&sni=static-nl.snobvpn.online#%F0%9F%87%BA%F0%9F%87%B8%20United%20States
+hysteria2://247802ca-0fbb-428a-b807-91a6e571b5c7@48.102.139.88:443?security=tls&obfs=salamander&obfs-password=a7rK-GlWiXFjHnfCYQeiNGqPgqj7sfRr&insecure=0&sni=static-se2.snobvpn.online#%F0%9F%87%BA%F0%9F%87%B8%20United%20States
 hysteria2://eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ@152.32.254.68:5010?security=tls&obfs=salamander&obfs-password=7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9&insecure=0&sni=nas.aizhzo.com#%F0%9F%87%AD%F0%9F%87%B0%20Hong%20Kong
-hysteria2://HPzKAhFXV5XgEmRSTM33DRuTHeFcB5ON@89.117.172.45:443?security=tls&obfs=salamander&obfs-password=0dRexOATy4t9J1ckKOLpPy9HrNoU5FmN&insecure=0&sni=eth.todsm.com#%F0%9F%87%BA%F0%9F%87%B8%20United%20States
